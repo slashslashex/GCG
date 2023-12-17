@@ -3,6 +3,8 @@
 3. docker exec -t GCG_core bash
 4. php artisan migrate:fresh --seed
 5. Учетки admin adminadmin и user useruser
+6. Если чето будет ругаться, то npm install && npm run dev
+
 
 ## TASK
 
