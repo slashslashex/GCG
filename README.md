@@ -2,9 +2,13 @@
 2. docker compose up -d
 3. docker exec -t GCG_core bash
 4. php artisan migrate:fresh --seed
-5. Учетки admin adminadmin и user useruser
-6. Если чето будет ругаться, то npm install && npm run dev
-7. Среды для работы с базой нет, можешь подключиться со своей на localhost:5432 или jdbc:postgresql://localhost:5432/postgres креды root/root
+5. php artisan queue:work
+6. 127.0.0.1:666
+7. Учетки admin adminadmin и user useruser
+8. Если чето будет ругаться, то npm install && npm run dev
+9. Среды для работы с базой нет, можешь подключиться со своей на localhost:5432 или jdbc:postgresql://localhost:5432/postgres креды root/root
+10. Для проверки писем http://127.0.0.1:8025/
+
 
 ## TASK
 
