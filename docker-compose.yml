@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:1.25.2
+    volumes:
+      - ./:/var/www/
+      - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - "666:80"
+    container_name: GCG_nginx
+    depends_on:
+      - core
+
+  core:
+    build:
+        context: .
+        dockerfile: _docker/app/DockerFile
+    volumes:
+      - ./:/var/www/
+    depends_on:
+      - postgres
+    container_name: GCG_core
+
+  postgres:
+    image: postgres:16.0
+    restart: always
+    volumes:
+      - ./_docker/postgresql/conf.d/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+    ports:
+      - 5432:5432
+    container_name: GCG_database
+
+  mailpit:
+      image: axllent/mailpit
+      restart: always
+      volumes:
+          - ./data:/data
+      ports:
+          - 8025:8025
+          - 1025:1025
+      environment:
+          MP_MAX_MESSAGES: 5000
+          MP_DATA_FILE: /data/mailpit.db
+          MP_SMTP_AUTH_ACCEPT_ANY: 1
+          MP_SMTP_AUTH_ALLOW_INSECURE: 1
+      depends_on:
+          - core
+      container_name: GCG_mailpit
+
