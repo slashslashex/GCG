@@ -4,7 +4,7 @@
 4. php artisan migrate:fresh --seed
 5. Учетки admin adminadmin и user useruser
 6. Если чето будет ругаться, то npm install && npm run dev
-
+7. Среды для работы с базой нет, можешь подключиться со своей на localhost:5432 или jdbc:postgresql://localhost:5432/postgres креды root/root
 
 ## TASK
 
