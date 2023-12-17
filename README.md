@@ -1,3 +1,3 @@
-docker compose build
-docker compose up -d
-php artisan migrate:fresh --seed
+docker compose build /n
+docker compose up -d /n
+php artisan migrate:fresh --seed /n
