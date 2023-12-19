@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('article', 255)->unique();
             $table->string('name', 255);
             $table->foreignId('user_id')->constrained();
-            $table->enum('status', ['available', 'unavailable']);
+            $table->string('status', 255);
             $table->jsonb('data')->nullable();
             $table->timestamps();
             $table->softDeletes();
