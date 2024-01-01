@@ -31,6 +31,7 @@ services:
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
+      PGDATA: /var/lib/postgresql/data/dir/
     ports:
       - 5432:5432
     container_name: GCG_database
