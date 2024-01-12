@@ -59,7 +59,7 @@ https://www.figma.com/file/pVspJcvzwZUYynT2dogGG2/PIN-ERP-ТЗ-03.02.2022-(Copy)
 Готовое приложение выложить на GitHub / Bitbucket
 -------------------------------------------------------------------
 
-##TASK
+## TASK
 
 
 Develop functionality in Laravel with a PostgreSQL database. Implement product listing, product details view, product addition, editing, and deletion.
